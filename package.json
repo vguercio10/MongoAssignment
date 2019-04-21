@@ -1,0 +1,37 @@
+{
+  "name": "mongoassignment",
+  "version": "1.0.0",
+  "description": "mongo homework assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vguercio10/MongoAssignment.git"
+  },
+  "keywords": [
+    "mongo",
+    "scraper",
+    "mongoose",
+    "express",
+    "express-handlebars",
+    "cheerio",
+    "axios",
+    "news",
+    "articles"
+  ],
+  "author": "vanessa guercio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vguercio10/MongoAssignment/issues"
+  },
+  "homepage": "https://github.com/vguercio10/MongoAssignment#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.16.4",
+    "express-hbs": "^2.1.2",
+    "mongoose": "^5.5.2"
+  }
+}
