@@ -52,7 +52,7 @@ axios.get("https://www.nytimes.com/section/technology").then(function(response) 
     });
 console.log(link, title, summary);  
 });
-db.Article.create(results).then((data)=> {
+db.Article.create(results).then(function (data) {
 console.log(data);
 })
   // Log the results once you've looped through each of the elements found with cheerio
