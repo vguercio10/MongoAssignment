@@ -19,8 +19,6 @@ app.use(express.static("public"));
 mongoose.connect("mongodb://localhost/nytimesdb", { useNewUrlParser: true });
 
 
-
-
 axios.get("https://www.nytimes.com/section/technology").then(function(response) {
 
   // Load the Response into cheerio and save it to a variable
@@ -52,9 +50,26 @@ axios.get("https://www.nytimes.com/section/technology").then(function(response) 
     });
 console.log(link, title, summary);  
 });
+
 db.Article.create(results).then(function (data) {
 console.log(data);
 })
+app.get("/Article", function(req, res) {
+  // Grab every document in the Articles collection
+  db.Article.find({})
+    .then(function(dbArticle) {
+      // If we were able to successfully find Articles, send them back to the client
+      res.json(dbArticle);
+    })
+    .catch(function(err) {
+      // If an error occurred, send it to the client
+      res.json(err);
+    });
+});
   // Log the results once you've looped through each of the elements found with cheerio
   
+});
+// Start the server
+app.listen(PORT, function() {
+  console.log("App running on port " + PORT + "!");
 });
